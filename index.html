@@ -225,6 +225,80 @@
 
 
   
+    <article id="post-JavaScript策略模式简单思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/11/JavaScript策略模式简单思考/">JavaScript策略模式简单思考</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/11/JavaScript策略模式简单思考/" class="archive-article-date">
+  	<time datetime="2018-06-11T01:46:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前提： 最近在做医生会员卡的相关 case，涉及到了一些卡的属性判断，结合以前看书时了解到的一些基本知识和网上查找到的相关资料，就简单说一下自己了解到的和掌握的一些基本知识。</p>
+<p>网上找一下关于策略模式的定义：<br><strong>策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。</strong></p>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>医生卡有卡相关的属性，表示这张卡是年卡，月卡，还是季卡等等，每种类型的卡都对应不同的权限等等，虽然这个 case 大部分情况判断都放在了后端去判断，但是当我们需要根据一些字段去区分卡属性对应不同操作的时候，我们就得定一系列对应的策略不解决不同状态对应的不同问题。</p>
+<h3 id="为什么要使用策略模式"><a href="#为什么要使用策略模式" class="headerlink" title="为什么要使用策略模式"></a>为什么要使用策略模式</h3><p>那么为什么要使用策略模式，策略模式的使用适合场景又是怎么样呢？我想的是如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现，这样可能就会造成代码的冗余和后期的不好维护。</p>
+<h4 id="对于前端"><a href="#对于前端" class="headerlink" title="对于前端"></a>对于前端</h4><h6 id="最简单的实现"><a href="#最简单的实现" class="headerlink" title="最简单的实现"></a>最简单的实现</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;!--对于情况1--&gt;</div><div class="line">function test1 () &#123;</div><div class="line">    return something1;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;!--对于情况二--&gt;</div><div class="line">function test2() &#123;</div><div class="line">    return something2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;!--对于情况3--&gt;</div><div class="line">function test3() &#123;</div><div class="line">    return something3;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>这样的虽然写起来相当简单，但是当判断条件一增多，很不方便管理，而且可读性很差，更优化一点用 switch case 可能方便阅读和理解：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">function cardStatus (type) &#123;</div><div class="line">    switch(type) &#123;</div><div class="line">        case &apos;test1&apos;:</div><div class="line">            情况1</div><div class="line">            break;</div><div class="line">        case &apos;test2&apos;:</div><div class="line">            情况2</div><div class="line">            break;</div><div class="line">        case &apos;test3&apos;:</div><div class="line">            情况3</div><div class="line">            break;</div><div class="line">        default:</div><div class="line">            break;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>大部分情况我可能就是直接使用 switch case 去解决问题了。</p>
+<h5 id="采用策略对象的形式"><a href="#采用策略对象的形式" class="headerlink" title="采用策略对象的形式"></a>采用策略对象的形式</h5><p>当我制定了一个策略对象，我就不需要在其他很多地方去频繁地调用一些状态判断和卡的属性，因为卡的一些基本字段是不会有什么改变的，那么我们对此进行封装好，最终我们得到的就是一些我们最终想到得到的结果，而不用去关心一些卡的属性判断。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">const cardInfo = (p1, p2) =&gt; &#123;</div><div class="line"></div><div class="line"></div><div class="line">    const cardFunc = &#123;</div><div class="line">        yearFunc: (param1) =&gt; &#123;</div><div class="line">            &lt;!--dosomething1--&gt;</div><div class="line">        &#125;,</div><div class="line">        monthFunc: (param1) =&gt; &#123;</div><div class="line">            &lt;!--dosomething2--&gt;</div><div class="line">        &#125;,</div><div class="line">        quarterFunc: (param1) =&gt; &#123;</div><div class="line">            &lt;!--dosomething3--&gt;</div><div class="line">        &#125;,</div><div class="line">        isExpired: () =&gt; &#123;</div><div class="line">            &lt;!--dosomething4--&gt;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    return (p1, p2) =&gt; &#123;</div><div class="line">        return cardFunc[p1] &amp;&amp; cardFunc[p1](p2)</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我在极客学院也看到一篇文章，分享一下: <a href="http://wiki.jikexueyuan.com/project/javascript-depth-understanding/model-design-nine.html" target="_blank" rel="external">设计模式之策略模式</a></p>
+<p>可能理解尚浅，有点偏差，还望见谅。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/11/JavaScript策略模式简单思考/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-支付宝小程序开发填坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
