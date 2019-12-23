@@ -245,7 +245,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="开发者工具的坑"><a href="#开发者工具的坑" class="headerlink" title="开发者工具的坑"></a>开发者工具的坑</h4><ol>
+<li>细线在某些机型上展示不出来（比如小米的一些小屏手机）</li>
+<li>scroll-view 不能设置百分比，一定要设置一个具体的高度才会触发触底事件</li>
+<li>api getsysteminfo</li>
+<li>react 式的开发模式</li>
+<li>极差的开发体验</li>
+<li>数据的难以捕捉</li>
+<li>不能自定义组件</li>
+</ol>
+<h4 id="区别于微信小程序"><a href="#区别于微信小程序" class="headerlink" title="区别于微信小程序"></a>区别于微信小程序</h4><ol>
+<li>没有自定义组件，不支持组件式开发，是被支付宝开发社区吐槽最多的问题，若要复用组件和方法，考虑抽出公共方法和使用继承写法</li>
+<li>react 的开发方式，和开发微信小程序有一些不同的地方，比如开发 template 时可能没有一个父标签，在循环调用这个模板时会报错，在使用微信小程序对应的 wxparse 富文本解析转换为 aliparse 时，记得把 bindtap 转换为 onTap 方法</li>
+<li>问题详情页面， 相同的代码在微信小程序上下拉刷新没有问题，在支付宝小程序上出现白屏问题，而且只有在 ios 设备上才会出现问题，IDE 无法复现，没有报错信息，只能一步步删除代码来确定问题，最后换种实现方式避免这种问题出现，具体原因仍需排查</li>
+</ol>
+<h4 id="开发体验"><a href="#开发体验" class="headerlink" title="开发体验"></a>开发体验</h4><ol>
+<li>测试的相当不便性，引用开发社区的一句话，测试请以真机为主</li>
+<li>上传代码的不方便性，上传代码把 node_modules 的大小也算进去了，导致每次上传都需要删除 node_modules</li>
+<li>细线在某些小屏手机上会有展示不出的问题</li>
+</ol>
+<h4 id="组件坑"><a href="#组件坑" class="headerlink" title="组件坑"></a>组件坑</h4><ol>
+<li>scroll-view 的使用，如果只用 onScrollToLower 这个方法的话，不能设置百分比，只能设置一个固定高度 （例子：医生 profile 页的评价列表，虽然根据支付宝那边的要求砍掉了，吐槽一下）</li>
+</ol>
+<h4 id="不一致"><a href="#不一致" class="headerlink" title="不一致"></a>不一致</h4><ol>
+<li>fill 方法也不支持</li>
+</ol>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ol>
+<li>说完缺点，也不能不说优点吧。嗯。。。这个支付宝小程序，能调用某些支付宝相关的接口，大概只有这个优点了。</li>
+</ol>
+
       
 
       
