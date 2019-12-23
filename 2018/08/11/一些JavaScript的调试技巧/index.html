@@ -6,18 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wolveszhou.top">
-  <title>Archives: 2018 | wolvesZhou的个人博客</title>
+  <title>一些JavaScript的调试技巧 | wolvesZhou的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人搞个博客玩玩,主要涉及前端方面的一些个人见解和心得体会，还有自己所做的一些项目拿出来让大家抨击一下">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wolvesZhou的个人博客">
-<meta property="og:url" content="http://wolveszhou.top/archives/2018/index.html">
+  <meta name="description" content="总结了一部分所知的和了解到的调试技巧，方便大家开发时用到，尽管 JavaScript 调试起来比较麻烦，但只要了解部分技巧，还是能够节省部分时间和快速定位问题的 1. debuggerdebugger 个人感觉应该是最好用的调试，简单暴力，想怎么用就怎么用,在代码中注入比较方便。示例： 123if (a === 6) &amp;#123;    debugger;&amp;#125; 2. 利用 console.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些JavaScript的调试技巧">
+<meta property="og:url" content="http://wolveszhou.top/2018/08/11/一些JavaScript的调试技巧/index.html">
 <meta property="og:site_name" content="wolvesZhou的个人博客">
-<meta property="og:description" content="个人搞个博客玩玩,主要涉及前端方面的一些个人见解和心得体会，还有自己所做的一些项目拿出来让大家抨击一下">
+<meta property="og:description" content="总结了一部分所知的和了解到的调试技巧，方便大家开发时用到，尽管 JavaScript 调试起来比较麻烦，但只要了解部分技巧，还是能够节省部分时间和快速定位问题的 1. debuggerdebugger 个人感觉应该是最好用的调试，简单暴力，想怎么用就怎么用,在代码中注入比较方便。示例： 123if (a === 6) &amp;#123;    debugger;&amp;#125; 2. 利用 console.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fu5txgtjbgj30t10390st.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fu5uboue1sj30i407nmyt.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fu5ucvon0tj30i107hgn0.jpg">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwgy1fu5uqtnerfj30fh01uglk.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwgy1fu5v06zt4fj30tr04rt96.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fu5vd8xr9pj30t80b3q58.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fu5wirjmdij30cv0bg0tc.jpg">
+<meta property="og:updated_time" content="2019-12-23T03:31:46.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wolvesZhou的个人博客">
-<meta name="twitter:description" content="个人搞个博客玩玩,主要涉及前端方面的一些个人见解和心得体会，还有自己所做的一些项目拿出来让大家抨击一下">
+<meta name="twitter:title" content="一些JavaScript的调试技巧">
+<meta name="twitter:description" content="总结了一部分所知的和了解到的调试技巧，方便大家开发时用到，尽管 JavaScript 调试起来比较麻烦，但只要了解部分技巧，还是能够节省部分时间和快速定位问题的 1. debuggerdebugger 个人感觉应该是最好用的调试，简单暴力，想怎么用就怎么用,在代码中注入比较方便。示例： 123if (a === 6) &amp;#123;    debugger;&amp;#125; 2. 利用 console.">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwgy1fu5txgtjbgj30t10390st.jpg">
   
     <link rel="alternative" href="/atom.xml" title="wolvesZhou的个人博客" type="application/atom+xml">
   
@@ -153,103 +162,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-一些JavaScript的调试技巧" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      一些JavaScript的调试技巧
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/11/一些JavaScript的调试技巧/" class="archive-article-date">
+
+        
+        <a href="/2018/08/11/一些JavaScript的调试技巧/" class="archive-article-date">
   	<time datetime="2018-08-11T07:35:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/08/11/一些JavaScript的调试技巧/">一些JavaScript的调试技巧</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>总结了一部分所知的和了解到的调试技巧，方便大家开发时用到，尽管 JavaScript 调试起来比较麻烦，但只要了解部分技巧，还是能够节省部分时间和快速定位问题的</p>
+<h4 id="1-debugger"><a href="#1-debugger" class="headerlink" title="1. debugger"></a>1. debugger</h4><p>debugger 个人感觉应该是最好用的调试，简单暴力，想怎么用就怎么用,在代码中注入比较方便。示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">if (a === 6) &#123;</div><div class="line">    debugger;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="2-利用-console-table-把对象输出成表格"><a href="#2-利用-console-table-把对象输出成表格" class="headerlink" title="2. 利用 console.table 把对象输出成表格"></a>2. 利用 console.table 把对象输出成表格</h4><p>利用 console.table 可以方便的把数组中的每个对象用表格的方式输出出来，而不必用 console.log 一个个去输出。示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">const a = [</div><div class="line">      &#123; a: 1, b: 2, c: 3 &#125;,</div><div class="line">      &#123; a: 4, b: 5, c: 6 &#125;,</div><div class="line">      &#123; a: 7, b: 8, c: 9 &#125;</div><div class="line">    ];</div><div class="line"></div><div class="line">    console.table(a);</div></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fu5txgtjbgj30t10390st.jpg" alt=""></p>
+<h4 id="3-格式化代码方便阅读"><a href="#3-格式化代码方便阅读" class="headerlink" title="3. 格式化代码方便阅读"></a>3. 格式化代码方便阅读</h4><p>可能我们在查看某些项目代码是发现 source map 没有部署到服务器上，代码看上去没有一点头绪，不急，我们强大的 Chrome 浏览器可以帮助我们格式化代码。</p>
+<h6 id="调试前："><a href="#调试前：" class="headerlink" title="调试前："></a>调试前：</h6><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu5uboue1sj30i407nmyt.jpg" alt=""></p>
+<h6 id="调试后："><a href="#调试后：" class="headerlink" title="调试后："></a>调试后：</h6><p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu5ucvon0tj30i107hgn0.jpg" alt=""></p>
+<p>左下角的{}就是调试按钮，是不是可读性好了很多。</p>
+<h4 id="4-快速找到调试函数"><a href="#4-快速找到调试函数" class="headerlink" title="4. 快速找到调试函数"></a>4. 快速找到调试函数</h4><p>这是对 debugger 调试方式的延伸。当我们在函数中设置断点时，通常有两种方法：</p>
+<ol>
+<li>查看器中找到代码并设置断点</li>
+<li>在代码中添加 debugger</li>
+</ol>
+<p>现在有种不常用的方式，当我们知道函数名字的时候，在控制台使用 debug(funcName)，代码会在停止在进入这里指定的函数时。但它不能用于局部函数或匿名函数。</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNbRwgy1fu5uqtnerfj30fh01uglk.jpg" alt=""></p>
+<h4 id="5-用-console-time-和-console-timeEnd-测试代码执行时间"><a href="#5-用-console-time-和-console-timeEnd-测试代码执行时间" class="headerlink" title="5.用 console.time() 和 console.timeEnd() 测试代码执行时间"></a>5.用 console.time() 和 console.timeEnd() 测试代码执行时间</h4><p>当你想知道某些代码的执行时间的时候这个工具将会非常有用，特别是当你定位很耗时的循环的时候。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwgy1fu5v06zt4fj30tr04rt96.jpg" alt=""></p>
+<h4 id="6-查看具体的函数调用和它的参数"><a href="#6-查看具体的函数调用和它的参数" class="headerlink" title="6. 查看具体的函数调用和它的参数"></a>6. 查看具体的函数调用和它的参数</h4><p>往往我们调用一个函数会忽略掉参数值和个数，那么我们其实可以在控制台监控我们想要监控的函数，方便我们去查看哪些参数传到了函数中。<br>示例：</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fu5vd8xr9pj30t80b3q58.jpg" alt=""></p>
+<h4 id="7-获取函数的堆栈轨迹信息"><a href="#7-获取函数的堆栈轨迹信息" class="headerlink" title="7. 获取函数的堆栈轨迹信息"></a>7. 获取函数的堆栈轨迹信息</h4><p>函数被调用时，就会被加入到调用栈顶部，执行结束之后，就会从调用栈顶部移除该函数。<br>当我们从进入页面到展示页面，或者执行一个点击事件，有时候很难完整的了解到底发生了什么以及什么时候发生的。所以我们得调用函数这种执行方式来调试。</p>
+<p><img src="https://ws1.sinaimg.cn/large/006tNbRwgy1fu5wirjmdij30cv0bg0tc.jpg" alt=""></p>
+<h5 id="toDo"><a href="#toDo" class="headerlink" title="toDo"></a>toDo</h5><p>如果还有其他更好的调试方式或者上述有什么写的不对的地方，欢迎交流。</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你，thanks<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://wolveszhou.top/2018/08/11/一些JavaScript的调试技巧/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/11/JavaScript策略模式简单思考/" class="archive-article-date">
-  	<time datetime="2018-06-11T01:46:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-11</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/12/20/流浪id引发的精度丢失思考/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          流浪id引发的精度丢失思考
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/11/JavaScript策略模式简单思考/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript策略模式简单思考</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/11/JavaScript策略模式简单思考/">JavaScript策略模式简单思考</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/23/支付宝小程序开发填坑/" class="archive-article-date">
-  	<time datetime="2018-02-23T03:15:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/23/支付宝小程序开发填坑/">支付宝小程序开发填坑</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -272,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
