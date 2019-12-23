@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://wolveszhou.top">
-  <title>wolvesZhou的个人博客</title>
+  <title>Archives: 2018/2 | wolvesZhou的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="个人搞个博客玩玩,主要涉及前端方面的一些个人见解和心得体会，还有自己所做的一些项目拿出来让大家抨击一下">
 <meta property="og:type" content="website">
 <meta property="og:title" content="wolvesZhou的个人博客">
-<meta property="og:url" content="http://wolveszhou.top/index.html">
+<meta property="og:url" content="http://wolveszhou.top/archives/2018/02/index.html">
 <meta property="og:site_name" content="wolvesZhou的个人博客">
 <meta property="og:description" content="个人搞个博客玩玩,主要涉及前端方面的一些个人见解和心得体会，还有自己所做的一些项目拿出来让大家抨击一下">
 <meta property="og:locale" content="zh-CN">
@@ -155,202 +155,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-流浪id引发的精度丢失思考" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/20/流浪id引发的精度丢失思考/">流浪id引发的精度丢失思考</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/20/流浪id引发的精度丢失思考/" class="archive-article-date">
-  	<time datetime="2019-12-20T11:05:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-20</time>
-</a>
-        
-      </header>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>这周开发一个功能提测，测试和我说一个页面跳转不正常。咦，我看了一下，这个页面怕是三个月没有动过了，而且线上一直没有问题，应该是后端动了那块内容导致的问题，查了一下，发现问题 id 在传输过程中发现了问题 id 发生了变化，例如发生问题的 id22280242127187968，在组件中变成了 22280242127187970，就是因为精度丢失导致的。</p>
-<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>因为问题 id 从页面传输给组件时，组件接收 id 时的 type 定义为 Number，从而导致了精度丢失问题，把接收类型改为 String 就解决了这个问题，那么来好好捋一捋为什么接收类型是 Number 就会造成这个问题</p>
-<h3 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h3><p>翻开 JavaScript 权威指南 34 页，原因写得清清楚楚：JavaScript 不区分整数值和浮点数值。JavaScript 中的所有数字均用浮点数值表示。</p>
-<p>按照 JavaScript 中的数字格式，能够表示的整数范围是从-9007199254740992 ~ 9007199254740992(即 2 的 53 次方的正负区间)。如果使用了超过此范围的整数，则无法保证低位数字的精度。让我们再来看看我们使用的 id 是什么，22280242127187968，是不是超过了这个范围呢。我们可以使用 Number.MAX_SAFE_INTEGER 这个常量快速获取最大安全整数值，Number.MIN_SAFE_INTEGER 获取最小安全常量值。</p>
-<p>当然，当我们引入 BigInt 这个基本类型时候，就能解决这个问题。</p>
-<h3 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h3><p>不知道大家有没有碰到过这么一个经典的问题：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">0.1 + 0.2 !== 0.3</div></pre></td></tr></table></figure>
-<p>这种也是精度丢失，<a href="https://juejin.im/post/5b20cbb051882513ac20354f" target="_blank" rel="external">可以查看掘金这篇文章</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
+    
       
       
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/20/流浪id引发的精度丢失思考/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-支付宝小程序开发填坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+        <div class="archives">
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/23/支付宝小程序开发填坑/">支付宝小程序开发填坑</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/23/支付宝小程序开发填坑/" class="archive-article-date">
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/02/23/支付宝小程序开发填坑/" class="archive-article-date">
   	<time datetime="2018-02-23T03:15:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-23</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/23/支付宝小程序开发填坑/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-前端日报" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/26/前端日报/">前端日报</a>
+      <a class="archive-article-title" href="/2018/02/23/支付宝小程序开发填坑/">支付宝小程序开发填坑</a>
     </h1>
   
 
-        
-        <a href="/2017/09/26/前端日报/" class="archive-article-date">
-  	<time datetime="2017-09-26T12:13:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="/2017/09/26/index.html">2017-09-26 前端日报</a></p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/26/前端日报/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
+    </div></section>
+  
+
+    
 
 
           </div>
@@ -372,9 +217,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
